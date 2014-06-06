@@ -262,8 +262,12 @@ main (int argc, char** argv)
     CorrespondenceData corr_data;
 
 #pragma omp parallel for schedule(dynamic)
+#if !defined(_MSC_VER)
     for (std::size_t i = 0; i < views.size(); ++i)
-    {
+#else
+    for (int64_t i = 0; i < views.size(); ++i)
+#endif
+		{
         mve::View::Ptr view = views[i];
         if (view == nullptr)
             continue;

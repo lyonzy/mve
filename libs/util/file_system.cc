@@ -275,7 +275,7 @@ copy_file (char const* src, char const* dst)
 /* ---------------------------------------------------------------- */
 
 std::string
-get_cwd_string (void)
+get_cwd_string (bool sanitizePath)
 {
     std::size_t size = 1 << 8;
     while (true)
@@ -285,6 +285,8 @@ get_cwd_string (void)
         {
             std::string ret(buf);
             delete[] buf;
+            if (sanitizePath)
+                return sanitize_path(ret);
             return ret;
         }
         delete[] buf;
@@ -405,7 +407,7 @@ join_path (std::string const& path1, std::string const& path2)
 std::string
 abspath (std::string const& path)
 {
-    return join_path(get_cwd_string(), path);
+    return join_path(get_cwd_string(false), path);
 }
 
 std::string

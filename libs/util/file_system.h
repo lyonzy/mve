@@ -89,7 +89,7 @@ write_string_to_file (char const* data, std::size_t len,
  */
 
 /** Determines the CWD and returns a convenient string. */
-std::string get_cwd_string (void);
+std::string get_cwd_string (bool sanitizePath = true);
 
 /** Returns the path of the binary currently executing. */
 std::string get_binary_path (void);

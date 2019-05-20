@@ -19,7 +19,7 @@ endif()
 set(LIBJPEG_FILENAME "jpegsr9b.zip")
 set(LIBPNG_FILENAME "lpng1637.7z")
 set(ZLIB_FILENAME "zlib-1.2.11.tar.xz")
-set(LIBTIFF_FILENAME "tiff-4.0.9.zip")
+set(LIBTIFF_FILENAME "tiff-4.0.10.tar.gz")
 set(GLEW_FILENAME "glew-2.1.0.tgz")
 set(QT5_FILENAME "qt-everywhere-opensource-src-5.6.3.tar.xz")
 set(GTEST_FILENAME "release-1.8.1.tar.gz")
@@ -93,7 +93,7 @@ ExternalProject_Add(libtiff
     DEPENDS zlib
     PREFIX build/libtiff
     URL ${LIBTIFF_URL}
-    URL_HASH SHA256=e1af5558a71cef8e6baa8d41b875769b0fb549260595db579a932472dae64f66
+    URL_HASH SHA256=2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4
     INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}

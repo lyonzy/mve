@@ -22,5 +22,5 @@ jobs:
         CMAKE_GENERATOR: 'Visual Studio 15 2017 Win64'
     - task: PublishBuildArtifacts@1
       inputs:
-        pathtoPublish: 'mve/MVE-0.1.1-win64.zip'
+        pathtoPublish: 'MVE-0.1.1-win64.zip'
         artifactName: MVE

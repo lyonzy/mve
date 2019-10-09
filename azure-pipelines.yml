@@ -18,7 +18,7 @@ jobs:
         cmake .
         cmake --build . --config Release
         cmake --build . --target PACKAGE --config Release
-    - env: 
+      env: 
         CMAKE_GENERATOR: 'Visual Studio 15 2017 Win64'
     - task: PublishBuildArtifacts@1
       inputs:
